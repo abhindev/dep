@@ -27,7 +27,7 @@ export default function Home({productList}:{productList:any}) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await axios.get(`https://dep-lake.vercel.app/api/products`);
+  const res = await axios.get(`/api/products`);
   return {
     props: {
       productList : res.data,
