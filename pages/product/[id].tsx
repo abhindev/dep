@@ -129,9 +129,9 @@ const Product = ({ product, products }: any) => {
 
 export const getServerSideProps = async ({ params }: any) => {
   const res = await axios.get(
-    `http://localhost:3000/api/products/${params.id}`
+    `/api/products/${params.id}`
   );
-  const resone = await axios.get("http://localhost:3000/api/products");
+  const resone = await axios.get("/api/products");
 
   return {
     props: {

@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 async function createOrder (customer, Address, City,State,pinCode, phone , phone2, item, total) {
-    const res = await axios.post("http://localhost:3000/api/orders", {
+    const res = await axios.post("/api/orders", {
     "customer": customer,
     "address": {
           "Address": Address,

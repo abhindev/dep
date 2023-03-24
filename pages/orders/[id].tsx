@@ -41,27 +41,14 @@ const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0'
   const clickHandler = () => {
     
       // Make the PUT request
-      const response = axios.put(`http://localhost:3000/api/orders/${id}`, {
+      const response = axios.put(`/api/orders/${id}`, {
         // Include any data you want to update in the request body
         status: 1,
       });
       // Handle the response data
       ()=>dispatch(reset());
   };
-  // const clear = () => {
-  //   dispatch(reset());
-  // };
-
-  // setTimeout(function() {
-  //   if (order_status == "PAID" && orderstatus == 0 ) {
-  //     const response = axios.put(`http://localhost:3000/api/orders/${id}`, {
-  //         // Include any data you want to update in the request body
-  //         status: 1,
-  //       });
-  //     console.log("done")
-  //     dispatch(reset());
-  //   }
-  // }, 1000);
+  
   
   const myTimeout = setTimeout(myGreeting, 100);
   function myGreeting() {
@@ -79,16 +66,7 @@ const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0'
   } else {
     console.log("error")
   }
-// function myGreeting() {
-//   if (order_status == "PAID" && orderstatus == 0 ) {
-//     const response = () => axios.put(`http://localhost:3000/api/orders/${id}`, {
-//       // Include any data you want to update in the request body
-//       status: 1,
-//     });
-//   console.log("done")
-//   dispatch(reset());
-//       }
-// }
+
 
   return (
     <div>
@@ -189,8 +167,8 @@ const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0'
 export default Orders;
 
 export const getServerSideProps = async ({ params }: any) => {
-  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
-  const resone = await axios.get(`http://localhost:3000/api/${params.id}`);
+  const res = await axios.get(`/api/orders/${params.id}`);
+  const resone = await axios.get(`/api/${params.id}`);
   // console.log(resone.data.data.order_status);
   return {
     props: {
