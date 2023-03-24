@@ -9,14 +9,14 @@ import styles from "../../styles/Checkout.module.css"
 import useWindowDimensions from '../hooks/useWindowDimensions'
 
 interface FormErrors {
-  name?: string;
-  email?: string;
-  address?: string;
-  state?: string;
-  city?: string;
-  phone?: string;
-  phone2?: string;
-  pincode?: string;
+  name?: any;
+  email?: any;
+  address?: any;
+  state?: any;
+  city?: any;
+  phone?: any;
+  phone2?: any;
+  pincode?: any;
   // Add other form field error properties here
 }
 
