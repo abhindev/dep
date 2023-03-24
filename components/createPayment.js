@@ -8,7 +8,7 @@ async function createPayment (
   customer_name,
   customer_email,
   customer_phone) {
-  const res = await axios.post("/api/get_page_data", {
+  const res = await axios.post(`${process.env.ROOT_URL}/api/get_page_data`, {
     order_id: order_id,
     order_amount: order_amount,
     order_currency: "INR",

@@ -41,7 +41,7 @@ const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0'
   const clickHandler = () => {
     
       // Make the PUT request
-      const response = axios.put(`/api/orders/${id}`, {
+      const response = axios.put(`${process.env.ROOT_URL}/api/orders/${id}`, {
         // Include any data you want to update in the request body
         status: 1,
       });
@@ -167,8 +167,8 @@ const formattedDate = `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0'
 export default Orders;
 
 export const getServerSideProps = async ({ params }: any) => {
-  const res = await axios.get(`/api/orders/${params.id}`);
-  const resone = await axios.get(`/api/${params.id}`);
+  const res = await axios.get(`${process.env.ROOT_URL}/api/orders/${params.id}`);
+  const resone = await axios.get(`${process.env.ROOT_URL}/api/${params.id}`);
   // console.log(resone.data.data.order_status);
   return {
     props: {
