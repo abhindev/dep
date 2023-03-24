@@ -19,6 +19,7 @@ export default function Home({productList}:{productList:any}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <h1>blaaa</h1>
       <Featured/>
       <PoductList productList={productList}/>
       </main>
