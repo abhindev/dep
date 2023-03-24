@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": "^7.21.3",
     "@headlessui/react": "^1.7.13",
     "@next/font": "13.2.4",
     "@reduxjs/toolkit": "^1.9.3",
@@ -19,7 +20,7 @@
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "mongoose": "^7.0.3",
-    "next": "13.2.4",
+    "next": "^13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
