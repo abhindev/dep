@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 // const MONGO_URL = "mongodb+srv://adam:adam266840@cluster0.zvplk1i.mongodb.net/products?retryWrites=true&w=majority"
 
-const MONGO_URL = process.env.MONGO_URL
+const MONGO_URL = "mongodb+srv://adam:adam266840@cluster0.zvplk1i.mongodb.net/kalianiammas?retryWrites=true&w=majority"
 
 if (!MONGO_URL) {
   throw new Error(
