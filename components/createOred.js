@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 async function createOrder (customer, Address, City,State,pinCode, phone , phone2, item, total) {
-    const res = await axios.post(`${process.env.ROOT_URL}/api/orders`, {
+    const res = await axios.post(`api/orders`, {
     "customer": customer,
     "address": {
           "Address": Address,
