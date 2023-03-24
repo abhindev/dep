@@ -6,14 +6,29 @@ import { useSelector,useDispatch } from 'react-redux'
 import { reset } from "../../redux/cartSlice";
 
 import styles from "../../styles/Checkout.module.css"
+import useWindowDimensions from '../hooks/useWindowDimensions'
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  address?: string;
+  state?: string;
+  city?: string;
+  phone?: string;
+  phone2?: string;
+  pincode?: string;
+  // Add other form field error properties here
+}
 
 function Checkout() {
   const router = useRouter()
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state:any) => state.cart);
   const dispatch = useDispatch();
   console.log(cart.total)
   const num = cart.total+50
   const cartTotal = num.toString()
+  const { width ,height } = useWindowDimensions();
+  const h =(height)
   // console.log(numstring)
   /////////////states//////////////////////
   const [orderId, setOrderId ]= useState("")
@@ -31,16 +46,16 @@ function Checkout() {
   /////////////validation////////////////////
   const initialValues = { name: "",email:"", address: "", city: "", state: "",pincode: "", phone: "", phone2: "" };
   const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [loading ,setLoading] =useState(false)
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
@@ -60,8 +75,8 @@ function Checkout() {
       setCustomerPhone2(formValues.phone2)
     }
   }, [formErrors]);
-  const validate = (values) => {
-    const errors = {};
+  const validate = (values:any) => {
+    const errors: FormErrors  = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
     if (!values.name) {
       errors.name= "Name is required!";
@@ -153,7 +168,7 @@ function Checkout() {
   /////////////////pay-end////////////////
   const Conform=()=>{
     setTimeout(function() {
-      window.scrollTo(0, h);
+      window.scrollTo(0,h);
     }, 1);
     
   }
