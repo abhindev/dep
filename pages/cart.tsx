@@ -7,7 +7,7 @@ import axios from "axios";
 import Link from "next/link";
 import useWindowDimensions from "../components/hooks/useWindowDimensions"
 // import CheckOut from "../components/ui/CheckOut"
-import CheckOut from "../components/ui/checkout";
+import CheckOut from "../components/ui/Checkout";
 import styles from "../styles/Cart.module.css";
 
 function Cart() {

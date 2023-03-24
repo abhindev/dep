@@ -7,7 +7,7 @@ import { reset } from "../../redux/cartSlice";
 
 import styles from "../../styles/Checkout.module.css"
 
-function CheckOut() {
+function Checkout() {
   const router = useRouter()
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -286,4 +286,4 @@ function CheckOut() {
   )
 }
 
-export default CheckOut
+export default Checkout
